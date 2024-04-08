@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from 'react'
+import React, {  useState } from 'react'
 import useUser from '../hooks/useUser'
 import logo from '../assets/logo.jpg'
 import {Link} from'react-router-dom'
 import{AnimatePresence,motion} from "framer-motion"
 import { PuffLoader } from 'react-spinners'
 import AccountMenu from './AccountMenu'
-import { auth } from "../config/firebase.config";
+
 import { fadeInOutWithOpacity, slideIn } from '../animations'
 import useFilters from '../hooks/useFilters'
 import { useQueryClient } from 'react-query'
@@ -14,10 +14,10 @@ import { IoMdCloseCircleOutline } from "react-icons/io";
 
 const Header = () => {
   const querclient = useQueryClient();
-  const { data, isLoading, isError } = useUser();
+  const { data, isLoading } = useUser();
   const [isOpen, setIsOpen] = useState(false);
 
-  const {data:filteredData,refetch} = useFilters();
+  const {data:filteredData} = useFilters();
 
 
 const handleSearchdata =(e)=>{
@@ -51,7 +51,7 @@ const clearQuery =()=>{
         />
         <AnimatePresence>
          {
-          filteredData.searchTerm.length > 0 && (
+          filteredData?.searchTerm?.length > 0 && (
             <motion.div {...fadeInOutWithOpacity} className='flex flex-end'
             onClick={clearQuery}
             >
@@ -72,7 +72,7 @@ const clearQuery =()=>{
                 <motion.div className='relative' onClick={()=>setIsOpen(!isOpen)}>
                   {data?.photoURL ? 
                   <div className='flex w-12 h-12 rounded-md relative items-center justify-center mx-3 cursor-pointer'>
-                    <img src={data?.photoURL} alt="profilePic" referrerpolicy="no-referrer" className='w-full h-full rounded-md object-cover ' />
+                    <img src={data?.photoURL} alt="profilePic"  className='w-full h-full rounded-md object-cover ' />
                   </div> 
                 :
                 <div className='flex w-12 h-12 rounded-md relative items-center justify-center bg-blue-700 shadow-md text-white text-2xl mx-3 cursor-pointer'>

@@ -23,7 +23,7 @@ const App = () => {
       <Route path="/*" element={<HomePage/>} />
       <Route path="/auth" element={<AuthPage/>} />
     </Routes>
-    </Suspense>
+  </Suspense>
     <ToastContainer position='top-right' theme='dark'/>
     <ReactQueryDevtools initialIsOpen={false} />
   </QueryClientProvider>

@@ -27,7 +27,7 @@ const CreateTemplate = () => {
 
   const [tags,setTags]=useState([]);
 
-  const {data : templates ,isLoading : templatesIsloading ,isError : templatesIsError ,refetch :templatesRefetch} = useTemplate();
+  const {data : templates ,isLoading : templatesIsloading  ,refetch :templatesRefetch} = useTemplate();
 
   const {data: user , isLoading:userLoading} = useUser();
 

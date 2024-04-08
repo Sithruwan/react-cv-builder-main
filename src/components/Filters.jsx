@@ -9,7 +9,7 @@ import { useQueryClient } from 'react-query'
 
 const Filters = () => {
     const querclient = useQueryClient();
-    const {data:filteredData,isLoading,isError,refetch} = useFilters();
+    const {data:filteredData} = useFilters();
     const [isClearHovered,setIsClearHovered]=useState(false)
     // const [isTagHovered,setITagHovered]=useState(false)
 
