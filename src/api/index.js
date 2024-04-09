@@ -1,4 +1,4 @@
-import { arrayRemove, arrayUnion, collection, doc, onSnapshot, orderBy, query, setDoc, updateDoc } from "firebase/firestore";
+import { arrayRemove, arrayUnion, collection, doc, getDoc, onSnapshot, orderBy, query, setDoc, updateDoc } from "firebase/firestore";
 import { auth, db } from "../config/firebase.config"
 import { toast } from "react-toastify";
 
@@ -50,6 +50,22 @@ export const getTemplates = ()=>{
         })
         return unsubscribe;
     })
+}
+
+export const getTemplateDetailsById =async(id)=>{
+    
+        const docRef = doc(db, "Templates", id);
+        const docSnap =  await getDoc(docRef);
+
+        if (docSnap.exists()) {
+        // console.log("Document data:", docSnap.data());
+        return (docSnap.data());
+        } else {
+        // docSnap.data() will be undefined in this case
+        console.log("No such document!");
+
+        }
+           
 }
 
 export const saveToCollection=async(userData, tempData)=>{

@@ -1,6 +1,6 @@
 import { AnimatePresence,motion } from "framer-motion"
 import { useState } from "react"
-import { slideUpX } from "../animations";
+
 
 
 const InnerBoxCard = ({label,Icon,onHandle}) => {

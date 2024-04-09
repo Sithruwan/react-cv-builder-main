@@ -1,4 +1,4 @@
-import {React,Suspense} from 'react'
+import {Suspense} from 'react'
 import Header from '../components/Header'
 import { Route, Routes } from 'react-router-dom'
 import HomeContainer from '../container/HomeContainer'

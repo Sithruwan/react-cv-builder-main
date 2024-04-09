@@ -4,7 +4,7 @@ import useTemplate from '../hooks/useTemplate'
 import RenderATemplate from "../components/RenderATemplate";
 
 const HomeContainer = () => {
-  const {data:temp_data,isError:temp_isError,isLoading,refetch}=useTemplate();
+  const {data:temp_data,isError:temp_isError}=useTemplate();
   return (
     <div className="w-full px-4 lg:px-12 py-6 justify-center items-center flex flex-col">
 

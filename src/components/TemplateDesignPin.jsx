@@ -10,6 +10,7 @@ import { useNavigate } from 'react-router-dom'
 
 
 const TemplateDesignPin = ({data,index}) => {
+    // console.log('DATA',data);
     const navigate = useNavigate();
     const [isHoverd,setIsHoverd]=useState(false);
     const{data:userData , refetch:userDataRefetch}=useUser();

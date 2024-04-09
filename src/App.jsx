@@ -10,7 +10,7 @@ import {QueryClient,QueryClientProvider} from 'react-query'
 import {ReactQueryDevtools} from 'react-query/devtools'
 
 
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const App = () => {
