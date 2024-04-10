@@ -36,7 +36,7 @@ export const getUserDetail =()=>{
 };
 
 export const getTemplates = ()=>{
-    return new Promise((resolve,reject)=>{
+    return new Promise((resolve)=>{
         const tempQuery = query(
             collection(db, "Templates"),
             orderBy("timestamp","asc")
@@ -113,3 +113,16 @@ if(!tempData.favourite.includes(userData.uid)){
     })
 }
 }
+
+export const getTemplateDetailEditByUser = (uid, id) => {
+    return new Promise((resolve, ) => {
+      const unsubscribe = onSnapshot(
+        doc(db, "users", uid, "resumes", id),
+        (doc) => {
+          resolve(doc.data());
+        }
+      );
+  
+      return unsubscribe;
+    });
+  };

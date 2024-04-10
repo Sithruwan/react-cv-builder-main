@@ -5,6 +5,7 @@ import { IoIosLogOut } from "react-icons/io";
 import { useQueryClient } from 'react-query';
 import { adminIds } from '../utils/helpers';
 
+
 const AccountMenu = ({ data }) => {
   const queryClient = useQueryClient();
 
@@ -27,7 +28,7 @@ const AccountMenu = ({ data }) => {
       )}
       <hr className='w-full border-black'/>
       <div className='flex flex-col gap-3 justify-start'>
-        <Link to={'/profile'} className='pillStyle'>Profile</Link>
+        <Link to={`/profile/${data?.uid}`} className='pillStyle'>Profile</Link>
         {
          adminIds.includes(data?.uid) && (
           <Link to={'/template/create'} className='pillStyle'>Add new template</Link>
