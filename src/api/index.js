@@ -126,3 +126,21 @@ export const getTemplateDetailEditByUser = (uid, id) => {
       return unsubscribe;
     });
   };
+
+  export const getSavedResumes=(uid)=>{
+    // console.log('UID',uid);
+    return new Promise((resolve, ) => {
+       const temQuery = query(
+         collection(db, "users", uid, "resumes"),
+         
+       );
+
+       const unsubscribe = onSnapshot(temQuery, (snapshot) => {
+         const resumes = snapshot.docs.map((doc) => doc.data());
+         resolve(resumes);
+         console.log(resumes);
+         
+       });
+        return unsubscribe;
+      });
+  }
